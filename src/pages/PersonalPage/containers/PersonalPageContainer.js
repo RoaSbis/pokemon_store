@@ -1,4 +1,4 @@
-import PersonalPageLayout from "../components/Layout";
+import PersonalPageLayout from "../components/PersonalPageLayout";
 
 const PersonalPageContainer = () => {
     return (

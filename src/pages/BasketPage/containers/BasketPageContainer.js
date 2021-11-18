@@ -1,4 +1,4 @@
-import BasketPageLayout from '../components/Layout'
+import BasketPageLayout from '../components/BasketPageLayout'
 
 const BasketPageContainer = () => {
     return (

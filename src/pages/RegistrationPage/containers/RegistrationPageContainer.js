@@ -1,5 +1,5 @@
 import React from 'react';
-import RegistrationPageLayout from '../components/Layout';
+import RegistrationPageLayout from '../components/RegistrationPageLayout';
 
 const RegistrationPageContainer = () => {
     return (

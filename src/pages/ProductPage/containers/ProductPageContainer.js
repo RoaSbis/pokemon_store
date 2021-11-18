@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductPageLayout from '../components/Layout';
+import ProductPageLayout from '../components/ProductPageLayout';
 
 const ProductPageContainer = () => {
     return (
