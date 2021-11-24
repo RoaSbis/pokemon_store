@@ -1,0 +1,25 @@
+.wrapper {
+    background-color: #211e1e;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+
+}
+
+.nawWrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    font-size: 18px;
+    color: #b5b5b5;
+    background-color:#211e1e;
+    border: none;
+}
+
+.button:hover {
+    color: #fff;
+}

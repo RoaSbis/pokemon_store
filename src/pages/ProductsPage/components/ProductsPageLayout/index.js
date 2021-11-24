@@ -1,9 +1,20 @@
-import React from 'react';
+import PokemonCard from '../../../../components/PokemonCard';
+import styles from './styles.module.scss'
 
-const ProductsPageLayout = () => {
+const ProductsPageLayout = ({ list, handleDetails, handleAddToCart }) => {
     return (
-        <div>
-            <h3>Products page</h3>
+        <div className={styles.wrapper}>
+            {list.map(({ id, name, image, price }, index) => (
+                <PokemonCard
+                    key={id}
+                    id={id}
+                    name={name} 
+                    image={image} 
+                    price={price} 
+                    handleDetails={() => handleDetails(id)}
+                    handleAddToCart={() => handleAddToCart(id, name, image, price)}
+                />
+            ))}
         </div>
     );
 };

@@ -9,20 +9,26 @@ const defaultState = {
 }
 
 const productsPageReducer = handleActions({
-    [actions.GET_PRODUCTS_REQUESTS]: (state) => ({
-        ...state,
-        isLoading: true,
-    }),
-    [actions.GET_PRODUCTS_SUCCESS]: (state, { payload }) => ({
-        ...state,
-        isLoading: false,
-        list: payload
-    }),
-    [actions.GET_PRODUCTS_FAIL]: (state, { payload }) => ({
-        ...state,
-        isLoading: false,
-        error: payload
-    })
-}, defaultState);
+    [actions.GET_PRODUCTS_REQUEST]: (state) => {
+        return {
+            ...state,
+            isLoading: true,
+        }
+    },
+    [actions.GET_PRODUCTS_SUCCESS]: (state, { payload } ) => {
+        return {
+            ...state,
+            list: payload.response,
+            isLoading: false,
+        }
+    }, 
+    [actions.GET_PRODUCTS_FAIL]: (state, { payload } ) => {
+        return {
+            ...state,
+            isLoading: false,
+            error: payload,
+        }
+    }
+}, defaultState)
 
 export default productsPageReducer;

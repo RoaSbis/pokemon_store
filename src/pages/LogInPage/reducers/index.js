@@ -12,26 +12,26 @@ const defaultState = {
 }
 
 const logInPageReducer = handleActions({
-    [actions.LOGIN_REQUESTS]: (state) => ({
+    [actions.LOG_IN_REQUEST]: (state) => ({
         ...state,
         isLoading: true,
     }),
-    [actions.LOGIN_SUCCESS]: (state, { payload }) => {
+    [actions.LOG_IN_SUCCESS]: (state, { payload }) => {
         const { accessToken, ...otherInfo } = payload.response
 
         localStorage.setItem(LOCAL_STORAGE_KEYS.TOKEN, accessToken)
 
         return { 
             ...state,
-            isLoading: false,
             info: otherInfo,
             isAuth: true,
+            isLoading: false,
         }
     },
-    [actions.LOGIN_FAIL]: (state, { payload }) => ({
+    [actions.LOG_IN_FAIL]: (state, { payload }) => ({
         ...state,
+        error: payload.response,
         isLoading: false,
-        error: payload.response
     })
 }, defaultState)
 

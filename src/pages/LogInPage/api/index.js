@@ -1,3 +1,3 @@
 import api from '../../../http';
 
-export const PostLogIn = () => api.post('/signIn')
+export const LogIn = (signData) => api.post('/auth/signIn', signData);

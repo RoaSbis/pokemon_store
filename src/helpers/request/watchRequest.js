@@ -11,16 +11,15 @@ function* sendRequest(action) {
     try {
         const callRequest = apiCallsMapping(action);
         const response = yield call(callRequest, action.payload);
-        yield put(
-            createActionWithPostfix(
-                action,
-                {
-                    response: response.data,
-                    actionPayload: action.payload,
-                },
-                SUCCESS_POSTFIX
-            )
-        )
+        
+        yield put(createActionWithPostfix(
+            action,
+            {
+                response: response.data,
+                actionPayload: action.payload,
+            },
+            SUCCESS_POSTFIX
+        ))
     } catch (error) {
         yield put(
             createActionWithPostfix(
@@ -34,7 +33,9 @@ function* sendRequest(action) {
     }
 }
 
-const isApiCallAction = (action) => action.type.endWith(REQUEST_POSTFIX);
+const isApiCallAction = (action) => {
+    return action.type.endsWith(REQUEST_POSTFIX)
+}
 
 function* apiCallsSaga () {
     yield takeEvery(isApiCallAction, sendRequest);

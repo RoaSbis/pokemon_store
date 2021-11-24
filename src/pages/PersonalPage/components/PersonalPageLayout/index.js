@@ -1,7 +1,6 @@
-const PersonalPageLayout = () => {
+const PersonalPageLayout = ({orders}) => {
     return (
         <div>
-            <h3>Personal Page</h3>
         </div>
     );
 };
